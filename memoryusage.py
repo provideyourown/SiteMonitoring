@@ -1,5 +1,14 @@
 #!/usr/bin/env python
 
+"""
+Display the system memory usage. Can be called on a remote server or use 'local' or 'localhost' for your computer
+
+Usage:
+
+./memoryusage.py MYSERVER
+
+"""
+
 import argparse
 import subprocess
 
@@ -22,10 +31,12 @@ def getMemoryUsage(server):
     return used, total, swap
 
 
-parser = argparse.ArgumentParser(description='Get memory usage for a server/computer.')
-parser.add_argument("server", help='Enter server name as defined in ~/.ssh/config or user@ip. NB: public key should be uploaded to server. For local computer use either local or localhost')
-args = parser.parse_args()
+if __name__ == '__main__': # allow funcs above to be imported as a module
 
-used, total, swap = getMemoryUsage(args.server)
-print "Memory usage: {:.2f}% of {}Mb (swap: {}%)".format(100.0*used/total, total, swap) 
-exit()
+    parser = argparse.ArgumentParser(description='Get memory usage for a server/computer.')
+    parser.add_argument("server", help='Enter server name as defined in ~/.ssh/config or user@ip. NB: public key should be uploaded to server. For local computer use either local or localhost')
+    args = parser.parse_args()
+
+    used, total, swap = getMemoryUsage(args.server)
+    print "Memory usage: {:.2f}% of {}Mb (swap: {:.2f}%)".format(100.0*used/total, total, swap*100) 
+    exit()
