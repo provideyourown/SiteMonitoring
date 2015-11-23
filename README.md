@@ -64,7 +64,7 @@ This utility shows the memory used out of total available and the percentage of 
 
         getMemoryUsage(server)
 
-Given the host definition for the server, return the memory *used, total* and *swap*. *Used* and *total* memory is in Megabytes, whereas *swap* is in percentage.
+Given the host definition for the server, return the memory *used, total* and *swap*. *Used* is given as a percentage, *total* memory is in Megabytes, and *swap* is in percentage.
 
 ####Standalone usage:
 
