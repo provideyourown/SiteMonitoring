@@ -1,7 +1,9 @@
 # Site Monitoring
 
 > &copy; 2015 Scott Daniels <provideyourown.com>
-> under GNU General Public License
+> under GNU General Public License (v3)
+
+I have also written an article on this library's purpose and usage - [here](http://provideyourown.com/2015/monitoring-tools-website-server/).
 
 ## Problem
 I have often wanted/needed a way to verify a server hosting websites was up and running properly. While many fine graphical tools exist such as Munin for this purpose, I wanted a simple set of utilities that could return just the parameters I needed and how I needed them. 
